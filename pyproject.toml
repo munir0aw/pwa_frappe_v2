@@ -1,9 +1,9 @@
 [project]
 name = "pwa_frappe"
 authors = [
-    { name = "Md Omar Faruk", email = "omfsakib@gmail.com"}
+    { name = "tariqul@glascutr.com", email = "tariqul@glascutr.com"}
 ]
-description = "Na"
+description = "Pwa Frappe"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
@@ -31,7 +31,6 @@ select = [
     "I",
     "UP",
     "B",
-    "RUF",
 ]
 ignore = [
     "B017", # assertRaises(Exception) - should be more specific
