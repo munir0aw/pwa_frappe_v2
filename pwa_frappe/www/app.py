@@ -52,6 +52,8 @@ def get_context(context):
 	if frappe.get_system_settings("enable_telemetry") and os.getenv("FRAPPE_SENTRY_DSN"):
 		include_js.append("sentry.bundle.js")
 
+	configure_desk = frappe.db.get_single_value("Web App Manifest", "configure_desk")
+
 	context.update(
 		{
 			"no_cache": 1,
@@ -70,6 +72,7 @@ def get_context(context):
 			"app_name": (
 				frappe.get_website_settings("app_name") or frappe.get_system_settings("app_name") or "Frappe"
 			),
+			"configure_desk": configure_desk,
 		}
 	)
 
