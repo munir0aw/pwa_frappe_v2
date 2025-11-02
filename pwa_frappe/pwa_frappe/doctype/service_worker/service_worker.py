@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-# Copyright (c) 2021, Monogramm and contributors
+# Copyright (c) 2021, Md Omar Faruk and contributors
 # For license information, please see license.txt
 
-from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
@@ -13,9 +11,7 @@ class ServiceWorker(Document):
 
 		# TODO Generate VAPID keys
 		# https://github.com/web-push-libs/vapid/tree/main/python
-		
 
-		frappe.publish_realtime(
-			event, {"progress": [100, 100]}, user=frappe.session.user)
+		frappe.publish_realtime(event, {"progress": [100, 100]}, user=frappe.session.user)
 
 		return False

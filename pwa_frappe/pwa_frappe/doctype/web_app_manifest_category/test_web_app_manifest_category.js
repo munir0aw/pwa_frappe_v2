@@ -10,14 +10,14 @@ QUnit.test("test: Web App Manifest Category", function (assert) {
 
 	frappe.run_serially([
 		// insert a new Web App Manifest Category
-		() => frappe.tests.make('Web App Manifest Category', [
-			// values to be set
-			{key: 'value'}
-		]),
+		() =>
+			frappe.tests.make("Web App Manifest Category", [
+				// values to be set
+				{ key: "value" },
+			]),
 		() => {
-			assert.equal(cur_frm.doc.key, 'value');
+			assert.equal(frm.doc.key, "value");
 		},
-		() => done()
+		() => done(),
 	]);
-
 });

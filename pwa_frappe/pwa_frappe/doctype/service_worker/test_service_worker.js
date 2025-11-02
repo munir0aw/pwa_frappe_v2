@@ -10,14 +10,14 @@ QUnit.test("test: Service Worker", function (assert) {
 
 	frappe.run_serially([
 		// insert a new Service Worker
-		() => frappe.tests.make('Service Worker', [
-			// values to be set
-			{key: 'value'}
-		]),
+		() =>
+			frappe.tests.make("Service Worker", [
+				// values to be set
+				{ key: "value" },
+			]),
 		() => {
-			assert.equal(cur_frm.doc.key, 'value');
+			assert.equal(frm.doc.key, "value");
 		},
-		() => done()
+		() => done(),
 	]);
-
 });
