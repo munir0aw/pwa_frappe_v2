@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "generate_vapid_key",
+  "vapid_email",
   "vapid_public_key",
   "vapid_private_key"
  ],
@@ -15,6 +16,13 @@
    "fieldname": "generate_vapid_key",
    "fieldtype": "Button",
    "label": "Generate VAPID Key"
+  },
+  {
+   "description": "Contact email for VAPID (required by Web Push specification)",
+   "fieldname": "vapid_email",
+   "fieldtype": "Data",
+   "label": "VAPID Email",
+   "reqd": 1
   },
   {
    "fieldname": "vapid_public_key",

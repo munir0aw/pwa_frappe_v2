@@ -161,7 +161,25 @@ if ("serviceWorker" in navigator) {
 						.then(function (subscription) {
 							console.log("[PWA] Push subscription successful");
 							console.log("Endpoint:", subscription.endpoint);
-							console.log("Subscription:", subscription);
+							
+							// Save subscription to backend
+							$.ajax({
+								url: "/api/method/pwa_frappe.www.push.index",
+								type: "POST",
+								data: {
+									subscription: JSON.stringify(subscription.toJSON())
+								},
+								success: function(response) {
+									if (response.message && response.message.success) {
+										console.log("[PWA] Subscription saved to server");
+									} else {
+										console.error("[PWA] Failed to save subscription:", response.message);
+									}
+								},
+								error: function(xhr, status, error) {
+									console.error("[PWA] Error saving subscription:", error);
+								}
+							});
 						})
 						.catch(function (error) {
 							console.error("[PWA] Push subscription failed:", error);
