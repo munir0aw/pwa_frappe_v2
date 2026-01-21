@@ -1,6 +1,7 @@
 {
   "name": "{{ app_name }}"
   {% if short_name -%},"short_name": "{{ short_name }}"{%- endif %}
+  {% if start_url -%},"id": "{{ start_url }}"{%- endif %}
   {% if theme_color -%},"theme_color": "{{ theme_color }}"{%- endif %}
   {% if background_color -%},"background_color": "{{ background_color }}"{%- endif %}
   {% if scope -%},"scope": "{{ scope }}"{%- endif %}
