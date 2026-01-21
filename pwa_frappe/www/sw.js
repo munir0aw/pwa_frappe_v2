@@ -135,6 +135,11 @@ function fromCache(request) {
 }
 
 function updateCache(request, response) {
+    // Don't cache partial responses (206)
+    if (response.status === 206) {
+        return Promise.resolve();
+    }
+    
     return caches.open(CACHE_NAME).then(function (cache) {
         return cache.put(request, response);
     });
